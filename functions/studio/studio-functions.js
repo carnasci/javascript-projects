@@ -9,6 +9,18 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+function reverseCharacters(inputstring){
+    if (typeof(inputstring) === String){
+        reversedString = ((inputstring.split("")).reverse()).join("");
+    } else {inputstring = String(inputstring);
+        reversedString = ((inputstring.split("")).reverse()).join("")};
+        return reversedString;
+}
+
+console.log("apple");
+console.log(reverseCharacters(01234));
+
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
