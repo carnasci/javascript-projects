@@ -12,14 +12,28 @@
 function reverseCharacters(inputstring){
     if (typeof(inputstring) === String){
         reversedString = ((inputstring.split("")).reverse()).join("");
-    } else {inputstring = String(inputstring);
-        reversedString = ((inputstring.split("")).reverse()).join("")};
+    } else (typeof(inputstring) === Number);
+        reversedString = ((String(inputstring).split("")).reverse()).join("");
+        Number(reversedString);
         return reversedString;
+};
+
+let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
+let arrayTest2 = [123, 8897, 42, 1168, 8675309];
+let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+function reverseArray(inputArray){
+for (let i = 0; i < inputArray.length; i++){
+    let reversedArray = [];
+    (reverseCharacters(inputArray[i])).push(reverseArray);
+    }
+    return reversedArray;
 }
 
-console.log("apple");
-console.log(reverseCharacters(01234));
 
+console.log("apple");
+console.log(reverseCharacters(1234));
+console.log(arrayTest1);
 
 // Part Two: Reverse Digits
 
@@ -38,9 +52,10 @@ console.log(reverseCharacters(01234));
 // 5. Return the final, reversed array.
 // 6. Be sure to print the results from each test case in order to verify your code.
 
-let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
-let arrayTest2 = [123, 8897, 42, 1168, 8675309];
-let arrayTest3 = ['hello', 'world', 123, 'orange'];
+//let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
+//let arrayTest2 = [123, 8897, 42, 1168, 8675309];
+//let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
 
 // Bonus Missions
 
