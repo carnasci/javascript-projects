@@ -3,16 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<script>
+		let actions = {
+			google: "https://www.google.com/search",
+			duckDuckGo: "https://duckduckgo.com/",
+			bing: "https://www.bing.com/search",
+			ask: "https://www.ask.com/web"
+		};
+
+		function setSearchEngine() {
+			const searchSelected = document.querySelector("input[name=engine]:checked");
+			const url = actions[searchSelected.value];
+			const query = document.getElementById("q");
+			const form = document.querySelector("form");
+			form.action = url;
+
+			if(query.value.trim() === "") {
+				alert("Search box is empty.");
+				event.preventDefault();
+			} else if (!searchSelected) {
+				alert("Which search engine would you like to use?");
+				event.preventDefault();
+			}
+			
+		};
+		
 		// TODO: create a handler
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let form = document.querySelector("form");
+		form.addEventListener("submit", setSearchEngine)
+
     });
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
+	<form id="searchForm" target="_blank">
+		<input type="textbox" id= "q" name="q">
+		<label>Google <input type="radio" name="engine" value="google"> </label>
+		<label>DuckDuckGo <input type="radio" name="engine" value="duckDuckGo"> </label>
+		<label>Bing <input type="radio" name="engine" value="bing"> </label>
+		<label>Ask <input type="radio" name="engine" value="ask"> </label>
+		<button name="submit">Go!</button>
     <!-- TODO: add form elements -->
 	</form>
 
